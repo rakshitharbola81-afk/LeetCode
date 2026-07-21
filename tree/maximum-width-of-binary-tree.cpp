@@ -21,13 +21,18 @@ public:
             int mini=q.front().second;
             int first,last;
             for(int i=0;i<size;i++){
-                int cur_id=q.front().second-mini;
-                TreeNode*node=q.front().first;
+                long long cur_id = q.front().second - mini;
+                TreeNode* node = q.front().first;
                 q.pop();
-                if(i==0)first=cur_id;
-                if(i==size-1)last=cur_id;
-                if(node->left)q.push({node->left,cur_id*2+1});
-                if(node->right)q.push({node->right,cur_id*2+2});
+
+                if (i == 0) first = cur_id;
+                if (i == size - 1) last = cur_id;
+
+                if (node->left)
+                    q.push({node->left, cur_id * 2 + 1});
+
+                if (node->right)
+                    q.push({node->right, cur_id * 2 + 2});
             }
             ans=max(ans,last-first+1);
         }
