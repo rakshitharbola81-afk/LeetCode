@@ -19,7 +19,7 @@ public:
         TreeNode*root=build(preorder,0,preorder.size()-1,inorder,0,inorder.size()-1,mpp);
         return root;
     }
-    TreeNode*build(vector<int>&preorder,int prestart,int preend,vector<int>inorder,int instart,int inend,map<int,int>mpp){
+    TreeNode*build(vector<int>&preorder,int prestart,int preend,vector<int>&inorder,int instart,int inend,map<int,int>&mpp){
         if(prestart>preend || instart>inend)return NULL;
         TreeNode*root=new TreeNode(preorder[prestart]);
         int inRoot=mpp[root->val];
