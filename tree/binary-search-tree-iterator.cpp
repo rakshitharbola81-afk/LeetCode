@@ -28,7 +28,10 @@ public:
     }
 private:
     void pushAll(TreeNode*node){
-        for(;node!=NULL;myst.push(node),node=node->left);
+        while(node){
+            myst.push(node);
+            node=node->left;
+        }
     }
 };
 
