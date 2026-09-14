@@ -2,17 +2,15 @@ class Solution {
 public:
     bool isBipartite(vector<vector<int>>& graph) {
         int n = graph.size();
-        int color[n];
-        for(int i=0;i<n;i++)color[i]=-1;
-        color[0]=0;
+        vector<int> color(n, -1);        
         for (int i = 0; i < n; i++) {
-            if (color[i] != -1) continue;
+            if (color[i] != -1) continue;            
             queue<int> q;
             q.push(i);
-            color[i] = 0;
+            color[i] = 0;            
             while (!q.empty()) {
                 int node = q.front();
-                q.pop();
+                q.pop();                
                 for (auto it : graph[node]) {
                     if (color[it] == -1) {
                         color[it] = !color[node];
