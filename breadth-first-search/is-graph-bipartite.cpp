@@ -4,7 +4,8 @@ public:
         queue<int>q;
         q.push(0);
         int n = graph.size();
-        vector<int> color(n, -1);
+        int color[n];
+        for(int i=0;i<n;i++)color[i]=-1;
         color[0]=0;
         while(!q.empty()){
             int node=q.front();
